@@ -14,7 +14,7 @@ def read_root():
     return {"connection": True}
 
 
-@app.get("/proofread/{text}")
+@app.get("/lookup/{text}")
 def word_receiver(text: str, q: str = None):
     word_definition = {"success": False}
     # definition look up function will be added here

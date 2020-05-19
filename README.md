@@ -14,3 +14,7 @@ Run it with command of
 ``` shell
 $ uvicorn main:app --reload
 ```
+
+## Reference
+* [FastAPI Usage](https://github.com/tiangolo/fastapi)
+* [FastAPI Official Docs](https://fastapi.tiangolo.com/alternatives/)
