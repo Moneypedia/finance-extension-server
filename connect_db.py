@@ -5,7 +5,7 @@ import os
 def init_data() -> None:
     # using dotenv to fetch MongoDB Atlas URL environment variable
     MONGO_URL = os.getenv("MONGO_URL")
-    print("Connecting MongoDB Atlas to: " + MONGO_URL)
+    # print("Connecting MongoDB Atlas to: " + MONGO_URL)
 
     # accessing MongoDB Atlas with pymongo MongoClient
     client = pymongo.MongoClient(MONGO_URL)

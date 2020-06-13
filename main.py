@@ -23,6 +23,8 @@ def read_root():
 @app.get("/lookup/{text}")
 def word_receiver(text: str, q: str = None):
     one_json_doc = vocab_terms_collection.find_one({"vocabulary": text})
+    # remove mongodb element id to prevent the following error
+    # ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
     del one_json_doc["_id"]
     # print(one_json_doc)
     one_json_doc["server_response"] = True
