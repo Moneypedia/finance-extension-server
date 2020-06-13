@@ -22,9 +22,10 @@ def read_root():
 
 @app.get("/lookup/{text}")
 def word_receiver(text: str, q: str = None):
-    word_definition = {"success": False}
-    # definition look up function will be added here
-    word_definition["success"] = True
-    word_definition["definition"] = "demo"
-    print(word_definition)
-    return word_definition
+    one_json_doc = vocab_terms_collection.find_one({"vocabulary": text})
+    del one_json_doc["_id"]
+    # print(one_json_doc)
+    one_json_doc["server_response"] = True
+    # print(one_json_doc)
+    # print(type(one_json_doc))
+    return one_json_doc
