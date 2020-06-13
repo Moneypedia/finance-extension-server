@@ -1,12 +1,18 @@
 from fastapi import FastAPI
 from datetime import date
+from connect_db import init_data
+
 
 # today's date
 today_int = date.today()
 print("test_app - Today's date:", today_int)
 
+
 # Initializing Fast API
 app = FastAPI()
+
+# Initializing Mongodb Atlas Connection
+vocab_terms_collection = init_data()
 
 
 @app.get("/")

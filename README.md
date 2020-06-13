@@ -15,6 +15,8 @@ Run it with command of
 $ uvicorn main:app --reload
 ```
 
+All the other functions included in main.py will be run with the command line above.
+
 ## Reference
 * [FastAPI Usage](https://github.com/tiangolo/fastapi)
 * [FastAPI Official Docs](https://fastapi.tiangolo.com/alternatives/)
