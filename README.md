@@ -31,6 +31,7 @@ uvicorn main:app --reload
 * Creating Virtual Environment using Google Cloud Shell
 
 ```shell
+gcloud config set project YOUR_PROJECT_ID
 git clone https://github.com/Moneypedia/finance-extension-server.git
 cd financ-extension-server
 virtualenv env
@@ -41,6 +42,8 @@ uvicorn main:app --reload
 ```
 
 ### Creating Gcloud App
+
+* Korea is asia-northeast 3 according to [Google Cloud Docs](https://www.google.com/search?q=asia+northeast+3+gcloud&oq=asia+northeast+3+gcloud&aqs=chrome..69i57.5240j0j7&sourceid=chrome&ie=UTF-8). But it seems like App engine is not supported, so I chose Tokyo instead.
 
 ```shell
 gcloud app create
