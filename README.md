@@ -28,12 +28,13 @@ uvicorn main:app --reload
 ### Configuration & Installation
 
 * [Tutorial Video Reference](https://www.youtube.com/watch?v=RaUO8mZJPN8)
+* FastAPI is gunicorn based, so refer to [this forum](https://github.com/tiangolo/fastapi/issues/228) which concludes to write [yaml file with gunicorn command](https://www.uvicorn.org/#running-with-gunicorn)
 * Creating Virtual Environment using Google Cloud Shell
 
 ```shell
 gcloud config set project YOUR_PROJECT_ID
 git clone https://github.com/Moneypedia/finance-extension-server.git
-cd financ-extension-server
+cd finance-extension-server
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
@@ -50,5 +51,13 @@ gcloud app create
 gcloud app deploy app.yaml
 gcloud app browse
 gcloud app logs tail -s default
+```
+
+### Update Gcloud App
+
+```shell
+cd finance-extension-server
+git pull
+gcloud app deploy app.yaml
 ```
 
